@@ -1,0 +1,60 @@
+/* -- Main -- */
+    main {
+        width: 100%; height: 60rem;
+    }
+        .leaderboard {
+            width: 100%; height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+            .leaderboard .lb-title {
+                position: absolute;
+                top: 10rem; left: 0; right: 0;
+                margin: 0 auto;
+                font-size: 3.5rem;
+            }
+                .lb-title.left {
+                    color: #ffa880;
+                }
+
+                .lb-title.right {
+                    color: #80d7ff;
+                }
+
+            .leaderboard .dev {
+                position: relative;
+                width: 50%; height: 100%;
+            }
+                .dev .image-container {
+                    width: 100%; height: 100%;
+                    background-image: url("../images/macbook.jpg");
+                        background-size: auto 80%;
+                        background-position: center 100%;
+                }
+
+            .leaderboard .cycling {
+                position: relative;
+                width: 50%; height: 100%;
+            }
+                .cycling .image-container {
+                    width: 100%; height: 100%;
+                    z-index: -1;
+                    background-image: url("../images/cycling.jpg");
+                        background-size: 100% auto;
+                        background-position: 0 80%;
+                }
+
+            .lb-background {
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+            }
+                .lb-background.left {
+                    background-color: #ffe9df19;
+                }
+
+                .lb-background.right {
+                    background-color: #dff5ff19;
+                }
+
+/* -- / -- */
