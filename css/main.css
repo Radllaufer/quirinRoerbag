@@ -25,6 +25,7 @@
                 position: relative;
                 width: 50%; height: 100%;
             }
+
                 .dev .image-container {
                     width: 100%; height: 100%;
                     background-image: url("../images/macbook.jpg");
@@ -36,6 +37,7 @@
                 position: relative;
                 width: 50%; height: 100%;
             }
+
                 .cycling .image-container {
                     width: 100%; height: 100%;
                     z-index: -1;
@@ -50,11 +52,12 @@
                 width: 100%; height: 100%;
             }
                 .lb-background.left {
-                    background-color: #ffe9df19;
+                    background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),                 linear-gradient(270deg, #001620, transparent 0.6%);
                 }
 
                 .lb-background.right {
-                    background-color: #dff5ff19;
+                    background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
+                                      linear-gradient(90deg, #001620, transparent 0.6%);
                 }
 
 /* -- / -- */
