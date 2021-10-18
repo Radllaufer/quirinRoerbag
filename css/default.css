@@ -57,9 +57,9 @@
 
         p {
             font-family: "Source Sans Pro", Arial, sans-serif;
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.8rem;
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 1.8rem;
         }
 /* -- / -- */
 
@@ -72,19 +72,21 @@
     }
         header nav {
             width: 100%; height: 100%;
-            display: flex;
+            display: flex; /* align title */
                 justify-content: center;
                 align-items: center;
             cursor: pointer;
         }
             nav h1 {
-                margin-right: -3.75rem;
+                margin-right: -3.75rem; /* accomodate for letter-spacing */
                 font-family: "Lucida Console";
                     font-size: 2rem;
                     font-weight: bold;
                     letter-spacing: 3.75rem;
                     text-transform: uppercase;
-                    color: #707070;
+                color: transparent;
+                    background-image: linear-gradient(180deg, #202020, #808080 70%);
+                    background-clip: text;
             }
 
 /* -- / -- */
