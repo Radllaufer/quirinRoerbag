@@ -11,11 +11,10 @@
             return html.offsetHeight;
         },
         fontSize() {
-            if (html.offsetWidth <= 864) {
+            if (html.offsetWidth <= 864) { /* check if mobile */
                 return 12;
-            } else {
-                return 16;
-            }
+            } 
+            return 16;
         },
     }
 

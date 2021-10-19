@@ -1,7 +1,8 @@
 /* -- Default -- */
-    * {
+    * { /* css reset */
         margin: 0;
-        padding: 0;
+            padding: 0;
+            border: 0;
         box-sizing: border-box;
     }
 
@@ -11,7 +12,7 @@
             font-style: normal;
             font-weight: 300;
             font-size: 16px;
-        overflow-x: hidden;
+        overflow-x: hidden; /* remove blank space */
         color: #001620;
     }
 
@@ -20,6 +21,7 @@
             background-size: cover;
             background-attachment: fixed;
             background-repeat: no-repeat;
+        overflow-x: hidden; /* remove blank space */
     }
         h1, h2, h3, h4, h5, h6 {
             text-align: center;
@@ -59,7 +61,11 @@
             font-family: "Source Sans Pro", Arial, sans-serif;
                 font-size: 1.2rem;
                 font-weight: 400;
-                line-height: 1.8rem;
+                line-height: 1.5;
+        }
+
+        .responsive-br {
+            position: absolute;
         }
 /* -- / -- */
 
@@ -67,11 +73,11 @@
 
 /* -- Header -- */
     header {
-            width: 100%; height: 4.5rem;
+            height: 4.5rem; width: 100%;
             background-image: linear-gradient(180deg, #000, #404040);
     }
         header nav {
-            width: 100%; height: 100%;
+            height: 100%; width: 100%;
             display: flex; /* align title */
                 justify-content: center;
                 align-items: center;
@@ -98,6 +104,14 @@
         html {
             font-size: 12px;
         }
+
+        header {
+            height: 6rem;
+        }
+            nav h1 {
+                margin-right: -3rem;
+                letter-spacing: 3rem;
+            }
     }
 
 /* -- / -- */
