@@ -11,10 +11,19 @@
             return html.offsetHeight;
         },
         fontSize() {
-            if (html.offsetWidth <= 864) { /* check if mobile */
-                return 12;
-            } 
-            return 16;
+            const htmlStyle = window.getComputedStyle(html);
+
+            switch (htmlStyle.getPropertyValue('font-size')) {
+                case '16px':
+                    return 16;
+                case '12px':
+                    return 12;
+                case '10px':
+                    return 10;
+                default:
+                    console.log('invalid font-size used');
+                    break;
+            }
         },
     }
 
@@ -24,7 +33,7 @@
 
 /* -- Function Calls */
     const callDefault = () => {
-        
+    
     }
 
 /* -- / -- */

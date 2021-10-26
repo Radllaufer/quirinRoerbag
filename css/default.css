@@ -73,14 +73,14 @@
 
 /* -- Header -- */
     header {
-            height: 4.5rem; width: 100%;
+            width: 100%; height: 4.5rem;
             background-image: linear-gradient(180deg, #000, #404040);
     }
         header nav {
-            height: 100%; width: 100%;
             display: flex; /* align title */
                 justify-content: center;
                 align-items: center;
+            width: 100%; height: 100%;
             cursor: pointer;
         }
             nav h1 {
@@ -100,11 +100,13 @@
 
 
 /* -- Responsive -- */
-    @media only screen and (max-width: 864px) and (max-height: 1000px) { /* 54rem - mobile */
-        html {
-            font-size: 12px;
-        }
-
+    @media only screen and (max-width: 1050px) /* tablets */
+                       and (max-height: 1400px)
+                       and (orientation: portrait),
+            
+           only screen and (max-width: 1400px)
+                       and (max-height: 1050px)
+                       and (orientation: landscape) {
         header {
             height: 6rem;
         }
@@ -113,5 +115,28 @@
                 letter-spacing: 3rem;
             }
     }
+
+    @media only screen and (max-width: 749px) /* mobile */
+                       and (max-height: 999px)
+                       and (orientation: portrait), 
+
+           only screen and (max-width: 999px)
+                       and (max-height: 749px)
+                       and (orientation: landscape) {
+        html {
+            font-size: 12px;
+        }
+    }
+
+    @media only screen and (max-width: 350px) /* iPhone 5s */
+                       and (orientation: portrait),
+       
+           only screen and (max-height: 350px)
+                       and (orientation: landscape) {
+    nav h1 {
+        margin-right: -2.5rem;
+        letter-spacing: 2.5rem;
+    }
+}
 
 /* -- / -- */
