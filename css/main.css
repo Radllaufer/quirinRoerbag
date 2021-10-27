@@ -1,0 +1,94 @@
+body {
+    height: 100%;
+}
+
+main {
+    width: 100%; height: 80%;
+}
+    .leaderboard {
+        position: relative;
+            left: -5%;
+            display: flex;
+            justify-content: center;
+        border: 0.2rem solid #f00;
+        width: 110%; height: 100%;
+    }
+        .slide {
+            position: absolute;
+            top: 0;
+            width: 55%; height: 100%;
+        }
+            .slide.left {
+                left: 0;
+                border: 0.2rem solid #00f;
+                /* mix-blend-mode: hard-light; */
+                background-image: url('../images/macbook.jpg');
+                background-size: 100% auto;
+            }
+                .left .bg-image {
+                    width: 100%; height: 100%;
+                    /* background-image: url('../images/macbook.jpg'); */
+                        background-size: auto 100%;
+                        background-position: center 100%;
+                        background-repeat: no-repeat;
+                    mix-blend-mode: difference;
+                }
+
+                .left .peek {
+                    position: relative;
+                    z-index: 200;
+                    border: 0.5rem solid #edf5f2;
+                    width: 100%; height: 100%;
+                    background-color: black;
+                    /* mix-blend-mode: hard-light; */
+                }
+
+            .slide.right {
+                right: 0;
+                border: 0.2rem solid #55f;
+                background-image: url('../images/cycling.jpg');
+                    background-size: 100% auto;
+                    background-position: center 80%;
+            }
+                .right .bg-image {
+                    width: 100%; height: 100%;
+                    /* background-image: url('../images/cycling.jpg'); */
+                        background-size: 100% auto;
+                        background-position: center 80%;
+                        background-repeat: no-repeat;
+                    mix-blend-mode: hard-light;
+                }
+
+                .right .peek {
+                    position: relative;
+                    z-index: 5;
+                    border: 0.5rem solid #888;
+                    width: 100%; height: 100%;
+                    background-color: grey;
+                }
+
+
+
+    .look-through {
+        padding-top: 8rem;
+        width: 100%; height: 40rem;
+        background-image: url('../images/cycling.jpg');
+        background-size: auto 100%;
+    }
+        .first {
+            position: relative;
+            margin: 0 auto;
+                padding-top: 4rem;
+                width: 30rem; height: 20rem;
+            background-color: #000;
+            mix-blend-mode: difference;
+        }
+            .second {
+                position: absolute;
+                right: 0; left: 0;
+                margin: 0 auto;
+                    border: 0.2rem solid #edf5f2;
+                    width: 15rem; height: 10rem;
+                /* background-color: #808080; */
+                background-color: black;
+            }
