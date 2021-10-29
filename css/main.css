@@ -1,7 +1,3 @@
-body {
-    height: 100%;
-}
-
 main {
     width: 100%; height: 80%;
 }
@@ -45,6 +41,7 @@ main {
 
             .slide.right {
                 right: 0;
+                z-index: 100;
                 border: 0.2rem solid #55f;
                 background-image: url('../images/cycling.jpg');
                     background-size: 100% auto;
@@ -66,6 +63,8 @@ main {
                     width: 100%; height: 100%;
                     background-color: grey;
                 }
+
+
 
 
 
