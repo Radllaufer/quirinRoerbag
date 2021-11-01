@@ -5,11 +5,11 @@ const setLeaderboardTransitions = () => {
     slideRight.style.width = '50%';
 
     const moveRight = () => {
-
+        slideRight.style.width = '45%';
     }
 
     const moveLeft = () => {
-
+        slideRight.style.width = '55%';
     }
 
     slideLeft.addEventListener('mouseover', moveRight);

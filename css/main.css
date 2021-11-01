@@ -69,25 +69,136 @@ main {
 
 
     .look-through {
+        position: relative;
         padding-top: 8rem;
         width: 100%; height: 40rem;
-        background-image: url('../images/cycling.jpg');
-        background-size: auto 100%;
+        background-image: url('../imag es/cycling.jpg');
+            background-size: auto 100%;
+            /* background-color: #808080; */
+        /* mix-blend-mode: hard-light; */
     }
         .first {
             position: relative;
+            z-index: 2;
             margin: 0 auto;
                 padding-top: 4rem;
-                width: 30rem; height: 20rem;
-            background-color: #000;
-            mix-blend-mode: difference;
+                width: 25rem; height: 20rem;
+            background-color: #333;
+            mix-blend-mode: hard-light;
         }
-            .second {
+            .first-inner {
                 position: absolute;
                 right: 0; left: 0;
                 margin: 0 auto;
                     border: 0.2rem solid #edf5f2;
                     width: 15rem; height: 10rem;
-                /* background-color: #808080; */
-                background-color: black;
+                background-color: #808080;
+                /* background-color: black; */
             }
+
+        .second {
+            position: absolute;
+            top: 5rem; left: 50%;
+            z-index: 1;
+            border: 0.2rem solid #f40;
+            width: 25rem; height: 25rem;
+            background-image: url('../images/macbook.jpg');
+                background-size: contain;
+            background-color: #808080;
+            /* mix-blend-mode: hard-light; */
+        }
+
+
+
+    .container {
+        position: relative;
+        margin: 8rem auto 0;
+            border: 0.4rem solid #f40;
+            width: 100rem; height: 50rem;
+    }
+        .view {
+            position: absolute;
+            top: 0;
+            width: 55%; height: 100%;
+            background-size: cover;
+        }
+            .view.cow {
+                left: 0;
+                z-index: -2;
+                background-image: url('../images/cow.jpg');
+            }
+
+        .window {
+            width: 45%; height: 100%;
+            mix-blend-mode: lighten;
+        }
+            .window::before {
+                position: absolute;
+                width: inherit; height: 100%;
+                background-color: #000;
+                content: '';
+            }
+
+            .view.bunny {
+                right: 0;
+                z-index: -1;
+                background-image: url('../images/bunny.jpg');
+            }
+
+            .filter {
+                position: absolute;
+                top: 0; right: 0;
+                width: 55%; height: 100%;
+                background-color: #000;
+                mix-blend-mode: darken;
+            }
+
+    
+
+    .mix {
+        position: relative;
+        margin: 20rem auto 20rem;
+            padding: 5rem 0 0 5rem;
+            border-radius: 1rem;
+            width: 60rem; height: 30rem;
+        background: #dff5ff;
+    }
+        .mixnix {
+            position: absolute;
+            top: 3rem; right: 10rem;
+            border: 0.6rem solid #00afff;
+                border-radius: 50%;
+                width: 15rem; height: 15rem;
+            background-color: #60cdff;
+            /* mix-blend-mode: difference; */
+        }
+
+        .mix-container {
+            position: static;
+            border: 0.6rem solid #ff5000;
+                border-radius: 50%;
+                width: 20rem; height: 20rem;
+            background-color: #ff9260;
+            mix-blend-mode: luminosity;
+        }
+            .mix-container::before {
+                position: absolute;
+                top: 3rem; right: 3rem;
+                border: 0.6rem solid #30ff00;
+                    border-radius: 50%;
+                    width: 10rem; height: 10rem;
+                background-color: #7eff60;
+                content: '';
+            }
+
+            .mix-frustration {
+                position: absolute;
+                top: 8rem; right: 5rem;
+                border: 0.6rem solid #d000ff;
+                    border-radius: 50%;
+                    width: 20rem; height: 20rem;
+                background-color: #e260ff;
+                /* mix-blend-mode: difference; */
+            }
+
+            
