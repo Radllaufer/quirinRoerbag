@@ -3,66 +3,98 @@
         width: 100%;
     }
         .leaderboard {
+            position: relative;
+                display: flex;
+                flex-direction: row;
             width: 100%; height: 100%;
-            display: flex;
-            flex-direction: row;
         }
-            .lb-title {
-                position: absolute;
-                    top: 10rem; right: 0; left: 0;
-                    z-index: 2;
-                margin: 0 auto;
-                font-size: 3.5rem;
-            }
-                .lb-title.dev {
-                    color: transparent;
-                    background-image: linear-gradient(180deg, #9f3200, #ffe9df);
-                    background-clip: text;
-                }
-
-                .lb-title.cycling {
-                    color: transparent;
-                    background-image: linear-gradient(180deg, #005780, #001620);
-                    background-clip: text;
-                }
-
             .leaderboard .slide {
-                position: relative;
-                width: 50%; height: 100%;
+                position: absolute;
+                top: 0;
+                width: 55%; height: 100%;
                 overflow: hidden; /* remove overflow on landscape orientations */
             }
+                .slide.dev {
+                    left: 0;
+                    z-index: -2;
+                }
+
+                .lb-title {
+                    position: absolute;
+                        top: 10rem; right: 0; left: 0;
+                        z-index: 2;
+                    margin: 0 auto;
+                    font-size: 3.5rem;
+                }
+                    .lb-title.dev {
+                        right: 9.0909091%; /* 10% of the sum of (50%/55%) */
+                        color: transparent;
+                        background-image: linear-gradient(180deg, #9f3200, #ffe9df);
+                        background-clip: text;
+                    }
+            
                 .dev .bg-image {
                     width: 100%; height: 100%;
                     background-color: #010101;
-                    background-image: url("../images/macbook.jpg");
-                        background-size: auto 80%;
-                        background-position: center 100%;
+                        background-image: url("../images/macbook.jpg");
+                        background-size: 90.909091% auto;
+                        background-position: 0 100%;
                         background-repeat: no-repeat;
                 }
 
-                .cycling .bg-image {
+                .lb-overlay {
+                    position: absolute;
+                        top: 0; left: 0;
+                        z-index: 1;
                     width: 100%; height: 100%;
-                    z-index: -1;
-                    background-image: url("../images/cycling.jpg");
-                        background-size: 100% auto;
-                        background-position: 0 80%;
                 }
+                    .lb-overlay.dev { /* image filter + fading borders */
+                        background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
+                                          linear-gradient(270deg, #001620, transparent 0.6%); 
+                    }
 
-            .lb-overlay {
+            .filter {
                 position: absolute;
-                    top: 0; left: 0;
-                    z-index: 1;
-                width: 100%; height: 100%;
+                top: 0; right: 0;
+                width: 50%; height: 100%;
+                background-color: #000;
+                mix-blend-mode: darken;
             }
-                .lb-overlay.dev { /* fading borders + image filter */
-                    background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                                      linear-gradient(270deg, #001620, transparent 0.6%); 
+
+            .leaderboard .window {
+                width: 50%; height: 100%;
+                mix-blend-mode: lighten;
+            }
+                .leaderboard .window::before {
+                    position: absolute;
+                    width: inherit; height: 100%;
+                    background-color: #000;
+                    content: '';
                 }
 
-                .lb-overlay.cycling { /* fading borders + image filter */
-                    background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
-                                      linear-gradient(90deg, #001620, transparent 0.6%);
+                .slide.cycling {
+                    right: 0;
+                    z-index: -1;
                 }
+                    .lb-title.cycling {
+                        left: 9.0909091%;
+                        color: transparent;
+                        background-image: linear-gradient(180deg, #005780, #001620);
+                        background-clip: text;
+                    }
+
+                    .cycling .bg-image {
+                        z-index: -1;
+                        width: 100%; height: 100%;
+                        background-image: url("../images/cycling-temporary.jpg");
+                            background-size: auto 100%;
+                            background-position: 40% 100%;
+                    }
+
+                    .lb-overlay.cycling { /* image filter + fading borders */
+                        background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
+                                          linear-gradient(90deg, #001620, transparent 0.6%);
+                    }
 
 /* -- / -- */
 
