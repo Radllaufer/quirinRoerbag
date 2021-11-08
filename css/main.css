@@ -18,6 +18,7 @@
                 .slide.dev {
                     left: 0;
                     z-index: -2;
+                    background-color: #010101;
                 }
 
                 .lb-title {
@@ -162,11 +163,11 @@
                     .dev .bg-image {
                         background-size: auto 80%;
                         background-position: center 100%;
-                        transform: scale(1.5);
+                        transform: scale(1.4) translateY(2%);
                     }
 
                     .lb-overlay.dev, .lb-overlay.cycling {
-                        width: auto;
+                        width: 100%;
                     }
 
                 .filter {
@@ -229,7 +230,7 @@
             }
 
         .dev .bg-image {
-            transform: scale(1.1) translateY(1.4rem); /* only applies to portrait */
+            transform: scale(1.1) translateY(8%); /* only applies to portrait */
         }
 
         .cycling .bg-image {
@@ -250,11 +251,11 @@
                            and (max-height: 749px)
                            and (orientation: landscape) {
             .dev .bg-image {
-                transform: scale(1.3);
+                transform: scale(1.1) translateY(10%);
             }
 
             .cycling .bg-image {
-                transform: scale(1.2) translateY(1.2rem);
+                transform: scale(1.2) translateY(4%);
             }
 
             .responsive-br {
@@ -263,12 +264,12 @@
         }
 
         @media only screen and (max-width: 400px) /* iPhone 6s */
-                        and (max-height: 700px)
-                        and (orientation: portrait),
-
-            only screen and (max-height: 400px)
-                        and (max-width: 700px)
-                        and (orientation: landscape) {
+                           and (max-height: 700px)
+                           and (orientation: portrait),
+   
+               only screen and (max-height: 400px)
+                           and (max-width: 700px)
+                           and (orientation: landscape) {
             .lb-title {
                 top: 2rem;
             }
