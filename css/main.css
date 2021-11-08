@@ -1,6 +1,7 @@
 /* -- Main -- */
     main {
         width: 100%;
+        overflow: hidden;
     }
         .leaderboard {
             position: relative;
@@ -101,7 +102,7 @@
 
 /* -- / -- */
 
-
+                    
 
 /* -- Responsive -- */
     @media only screen and (min-width: 1350px)  and (max-width: 1400px) /* iPad Pro 12.9" */
@@ -144,17 +145,57 @@
                            and (max-height: 1400px)
                            and (orientation: portrait) {
             .leaderboard {
-            flex-direction: column;
+                position: relative;
+                flex-direction: column;
             }
                 .leaderboard .slide {
+                    position: relative;
                     width: 100%; height: 50%;
                 }
+                    .lb-title.dev {
+                        right: 0;
+                    }
+                        .responsive-br {
+                            position: absolute;
+                        }
+                    
                     .dev .bg-image {
+                        background-size: auto 80%;
+                        background-position: center 100%;
                         transform: scale(1.5);
                     }
 
-                    .responsive-br {
-                        position: absolute;
+                    .lb-overlay.dev, .lb-overlay.cycling {
+                        width: auto;
+                    }
+
+                .filter {
+                    display: none;
+                }
+
+                .leaderboard .window {
+                    width: 100%; height: 50%;
+                    mix-blend-mode: normal;
+                }
+                    .leaderboard .window::before {
+                        background: none;
+                    }
+
+                    .slide.cycling {
+                        height: 100%;
+                    }
+
+                    .lb-title.cycling {
+                        left: 0;
+                    }
+
+                    .cycling .bg-image {
+                        background-size: 100% auto;
+                        background-position: 0 80%;
+                    }
+
+                    .lb-overlay.cycling {
+                            right: auto;
                     }
         }
 
@@ -162,17 +203,14 @@
                            and (max-height: 1050px)
                            and (orientation: landscape) {
             .leaderboard {
-            flex-direction: row;
+                flex-direction: row;
             }
                 .leaderboard .slide {
-                    width: 50%; height: 100%;
+                    width: 55%; height: 100%;
                 }
-                    .slide.dev {
-                        width: 50%; height: 100%;
+                    .dev .bg-image  {
+                        transform: scale(1.2) translateY(-10%);
                     }
-                        .dev .bg-image  {
-                            background-size: auto 70%;
-                        }
         }
 
     @media only screen and (max-width: 749px) /* mobile */
@@ -192,6 +230,10 @@
 
         .dev .bg-image {
             transform: scale(1.1) translateY(1.4rem); /* only applies to portrait */
+        }
+
+        .cycling .bg-image {
+            background-size: auto 100%;
         }
 
         .lb-overlay.dev {
@@ -244,10 +286,10 @@
         }
 
         @media only screen and (max-width: 350px) /* iPhone 5s */
-                        and (orientation: portrait),
-
-            only screen and (max-height: 350px)
-                        and (orientation: landscape) {
+                           and (orientation: portrait),
+   
+               only screen and (max-height: 350px)
+                           and (orientation: landscape) {
             html {
                 font-size: 10px;
             }
