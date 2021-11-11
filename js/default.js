@@ -25,6 +25,22 @@
                     break;
             }
         },
+        orientation() {
+            if (this.htmlWidth() < this.htmlHeight()) {
+                return 'portrait';
+            }
+
+            if (this.htmlWidth() > this.htmlHeight()) {
+                return 'landscape';
+            }
+        },
+        isMobile() {
+            if ((this.htmlWidth() <= 749 && this.htmlHeight() <= 999) || 
+                (this.htmlWidth() <= 999 && this.htmlHeight() <= 749) ) {
+                return true;
+            }
+            return false;
+        },
     }
 
 /* -- / -- */
@@ -32,8 +48,6 @@
 
 
 /* -- Function Calls */
-    const callDefault = () => {
-    
-    }
+    // const callDefault = () => {}
 
 /* -- / -- */

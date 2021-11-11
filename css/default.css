@@ -84,7 +84,7 @@
             cursor: pointer;
         }
             nav h1 {
-                margin-right: -3.75rem; /* accomodate for letter-spacing */
+                margin-right: -3.75rem; /* accomodate for letter-spacing */ 
                 font-family: "Lucida Console";
                     font-size: 2rem;
                     font-weight: bold;

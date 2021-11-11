@@ -58,25 +58,25 @@
                         width: 90.909091% /* varies on hover */;
                         background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
                                           linear-gradient(270deg, #001620, transparent 0.6%);
-                                          /* image filter + fading borders */
-                        transition: all 400ms ease 50ms;
+                                          /* image lbFilter + fading borders */
+                        transition: all 700ms 50ms;
                     }
 
-            #filter { /* counteracts #window */
+            #lbFilter { /* counteracts #lbWindow */
                 position: absolute;
                 top: 0; right: 0;
                 width: 50% /* varies */; height: 100%;
                 background-color: #000;
                 mix-blend-mode: darken;
-                transition: all 400ms ease 50ms;
+                transition: all 700ms 50ms;
             }
 
-            #window { /* allows to look through cycling slide */
+            #lbWindow { /* allows to look through cycling slide */
                 width: 50% /* varies */; height: 100%;
                 mix-blend-mode: lighten;
-                transition: all 400ms ease 50ms;
+                transition: all 700ms 50ms;
             }
-                #window::before {
+                #lbWindow::before {
                     position: absolute;
                     width: inherit; height: 100%;
                     background-color: #000;
@@ -108,7 +108,7 @@
                         width: 90.909091%; /* varies */
                         background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
                                           linear-gradient(90deg, #001620, transparent 0.6%);
-                        transition: all 400ms ease 50ms;
+                        transition: all 700ms 50ms;
                     }
 
 /* -- / -- */
@@ -178,17 +178,20 @@
 
                     .bg-overlay.dev, .bg-overlay.cycling {
                         width: 100%;
+                        transition: none;
                     }
 
-                #filter {
+                #lbFilter {
                     display: none;
+                    transition: none;
                 }
 
-                #window {
+                #lbWindow {
                     width: 100%; height: 50%;
                     mix-blend-mode: normal;
+                    transition: none;
                 }
-                    #window::before {
+                    #lbWindow::before {
                         background: none;
                     }
 
@@ -255,6 +258,10 @@
         .bg-overlay.cycling {
             background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
                               linear-gradient(180deg, #001620, transparent 0.6%);
+        }
+
+        #lbFilter, #lbWindow, .bg-overlay.dev, .bg-overlay.cycling {
+            transition: none;
         }
     }
         @media only screen and (max-width: 999px)
