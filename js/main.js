@@ -1,6 +1,7 @@
 /* -- Main -- */
     const lb = document.getElementById('lb');
     const lbWindow = document.getElementById('lbWindow');
+    const lbWindowStyles = window.getComputedStyle(lbWindow);
     const lbFilter = document.getElementById('lbFilter');
     const bgOverlayDev = document.getElementById('bgOverlayDev');
     const bgOverlayCycling = document.getElementById('bgOverlayCycling');
@@ -10,8 +11,9 @@
         main.style.height = `${(window.innerHeight - headerHeight) / get.fontSize()}rem`;
     }
 
+
     const setLbWidths = (pos) => {
-        let valueArray = [50, 50, 90.909091, 90.909091];
+        let valueArray = [50, 50, 91, 91];
 
         if (pos === 'left') {
             valueArray = [55, 45, 100, 81.818181 /* 90.9 - 9.09 */];
@@ -33,33 +35,58 @@
         return valueArray[0];
     }
 
-    const checkSide = (e) => {
-        let middle = lb.offsetWidth * (setLbWidths() / 100);
 
-        if (e.clientX < middle) {
+    let lbCentreLine = lb.offsetWidth * (setLbWidths() / 100);
+
+    const checkSide = (e) => {
+
+        if (e.clientX < lbCentreLine) {
+            lbCentreLine = lb.offsetWidth * (setLbWidths('left') / 100);
             setLbWidths('left');
-            middle = lb.offsetWidth * (setLbWidths('left') / 100);
             return;
         }
 
-        if (e.clientX >= middle) {
+        if (e.clientX >= lbCentreLine) {
+            lbCentreLine = lb.offsetWidth * (setLbWidths('right') / 100);
             setLbWidths('right');
-            middle = lb.offsetWidth * (setLbWidths('right') / 100);
             return;
         }
     }
 
-    const defineEventListeners = (addEL, portrait) => {
-        if (addEL) {
-            lb.addEventListener('mouseover', checkSide);
-            lb.addEventListener('mouseleave', setLbWidths);
+    const currentWidth = () => {
+        let array = lbWindowStyles.getPropertyValue('width').split('');
+        array.pop();
+        array.pop();
+        return Math.floor( Number(array.join('')) );
+    }
+
+    const resetLbCentreLine = () => {
+        if (currentWidth() === (Math.floor( get.htmlWidth() / 2)) ) {
+            lbCentreLine = lb.offsetWidth * (setLbWidths() / 100);
+            return;
+        }
+        setTimeout(() => {
+            resetLbCentreLine();
+        }, 50);
+    }
+
+    const callResetLbCentreLine = () => {
+        setLbWidths();
+        resetLbCentreLine();
+    }
+
+
+    const defineEventListeners = (EL, portrait) => {
+        if (EL) {
+            lb.addEventListener('mousemove', checkSide);
+            lb.addEventListener('mouseleave', callResetLbCentreLine);
             setLbWidths();
             return;
         }
 
-        if (!addEL) {
-            lb.removeEventListener('mouseover', checkSide);
-            lb.removeEventListener('mouseleave', setLbWidths);
+        if (!EL) {
+            lb.removeEventListener('mousemove', checkSide);
+            lb.removeEventListener('mouseleave', callResetLbCentreLine);
             
             if (portrait) {
                 setLbWidths('portrait');
@@ -72,11 +99,9 @@
         }
     }
 
-
-
     const removeTransitionsOnOrientationChange = (toggle) => {
-        console.log(get.htmlWidth());
-        console.log(get.htmlHeight());
+        get.htmlWidth(); // required to work properly
+        get.htmlHeight();
 
         if (toggle === 'disable') {
             lbWindow.style.transition = 'none';
@@ -98,7 +123,7 @@
     const rTOC = (toggle) => {
         removeTransitionsOnOrientationChange(toggle);
     }
-
+    
 /* -- / -- */
 
 

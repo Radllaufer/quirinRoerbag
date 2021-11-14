@@ -36,7 +36,8 @@
                         right: 9.0909091%; /* 10% of the sum of (50%/55%), 55% is based on hover widths */
                         color: transparent;
                         background-image: linear-gradient(180deg, #9f3200, #ffe9df);
-                        background-clip: text;
+                            background-clip: text;
+                            -webkit-background-clip: text;
                     }
             
                 .dev .bg-image {
@@ -57,7 +58,7 @@
                     .bg-overlay.dev {
                         width: 90.909091% /* varies on hover */;
                         background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                                          linear-gradient(270deg, #001620, transparent 0.6%);
+                                          linear-gradient(270deg, #001620, transparent 0.8%);
                                           /* image lbFilter + fading borders */
                         transition: all 700ms 50ms;
                     }
@@ -92,6 +93,7 @@
                         color: transparent;
                         background-image: linear-gradient(180deg, #005780, #001620);
                         background-clip: text;
+                        -webkit-background-clip: text;
                     }
 
                     .cycling .bg-image {
@@ -107,7 +109,7 @@
                         z-index: 3;
                         width: 90.909091%; /* varies */
                         background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
-                                          linear-gradient(90deg, #001620, transparent 0.6%);
+                                          linear-gradient(90deg, #001620, transparent 0.8%);
                         transition: all 700ms 50ms;
                     }
 
@@ -176,8 +178,17 @@
                         transform: scale(1.4) translateY(2%);
                     }
 
-                    .bg-overlay.dev, .bg-overlay.cycling {
+                    .bg-overlay.dev {
                         width: 100%;
+                        background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
+                                          linear-gradient(0deg, #001620, transparent 0.8%);
+                        transition: none;
+                    }
+
+                    .bg-overlay.cycling {
+                        width: 100%;
+                        background-image: linear-gradient(180deg, #dff5ff19, #dff5ff19),
+                                          linear-gradient(180deg, #001620, transparent 0.8%);
                         transition: none;
                     }
 
@@ -246,18 +257,18 @@
             transform: scale(1.1) translateY(8%); /* only applies to portrait */
         }
 
+        .bg-overlay.dev {
+            background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
+                              linear-gradient(0deg, #001620, transparent 0.8%);
+        }
+
         .cycling .bg-image {
             background-size: auto 100%;
         }
 
-        .bg-overlay.dev {
-            background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                              linear-gradient(0deg, #001620, transparent 0.6%);
-        }
-
         .bg-overlay.cycling {
             background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
-                              linear-gradient(180deg, #001620, transparent 0.6%);
+                              linear-gradient(180deg, #001620, transparent 0.8%);
         }
 
         #lbFilter, #lbWindow, .bg-overlay.dev, .bg-overlay.cycling {
@@ -271,8 +282,20 @@
                 transform: scale(1.1) translateY(10%);
             }
 
+            .bg-overlay.dev {
+                background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
+                                  linear-gradient(270deg, #001620, transparent 0.8%)
+                                  !important;
+            }
+
             .cycling .bg-image {
                 transform: scale(1.2) translateY(4%);
+            }
+
+            .bg-overlay.cycling {
+                background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
+                                  linear-gradient(90deg, #001620, transparent 0.8%)
+                                  !important;
             }
 
             .responsive-br {
