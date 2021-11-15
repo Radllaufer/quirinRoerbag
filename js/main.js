@@ -112,10 +112,10 @@
         }
 
         if (toggle === 'enable') {
-            lbWindow.style.transition = 'all 700ms 50ms';
-            lbFilter.style.transition = 'all 700ms 50ms';
-            bgOverlayDev.style.transition = 'all 700ms 50ms';
-            bgOverlayCycling.style.transition = 'all 700ms 50ms';
+            lbWindow.style.transition = 'all 900ms 50ms';
+            lbFilter.style.transition = 'all 900ms 50ms';
+            bgOverlayDev.style.transition = 'all 900ms 50ms';
+            bgOverlayCycling.style.transition = 'all 900ms 50ms';
             return;
         }
     }

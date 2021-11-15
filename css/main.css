@@ -56,12 +56,19 @@
                     width: 100%; height: 100%;
                 }
                     .bg-overlay.dev {
-                        width: 90.909091% /* varies on hover */;
+                        width: 90.909091%; /* varies on hover */
                         background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                                          linear-gradient(270deg, #001620, transparent 0.8%);
+                                          linear-gradient(270deg, #001620, #001620 -1%, transparent 0.8%); /* second colour and -1% remove lightning bug */
                                           /* image lbFilter + fading borders */
-                        transition: all 700ms 50ms;
+                        transition: all 900ms 50ms;
                     }
+                        #bgOverlayDev::before { /* removes "lightning" bug */
+                            position: absolute;
+                            right: -1%;
+                            width: 1%; height: 100%;
+                            background-color: #001620;
+                            content: '';
+                        }
 
             #lbFilter { /* counteracts #lbWindow */
                 position: absolute;
@@ -69,13 +76,13 @@
                 width: 50% /* varies */; height: 100%;
                 background-color: #000;
                 mix-blend-mode: darken;
-                transition: all 700ms 50ms;
+                transition: all 900ms 50ms;
             }
 
             #lbWindow { /* allows to look through cycling slide */
                 width: 50% /* varies */; height: 100%;
                 mix-blend-mode: lighten;
-                transition: all 700ms 50ms;
+                transition: all 900ms 50ms;
             }
                 #lbWindow::before {
                     position: absolute;
@@ -92,8 +99,8 @@
                         left: 9.0909091%;
                         color: transparent;
                         background-image: linear-gradient(180deg, #005780, #001620);
-                        background-clip: text;
-                        -webkit-background-clip: text;
+                            background-clip: text;
+                            -webkit-background-clip: text;
                     }
 
                     .cycling .bg-image {
@@ -109,9 +116,16 @@
                         z-index: 3;
                         width: 90.909091%; /* varies */
                         background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
-                                          linear-gradient(90deg, #001620, transparent 0.8%);
-                        transition: all 700ms 50ms;
+                                          linear-gradient(90deg, #001620, #001620 -1%, transparent 0.8%);
+                        transition: all 900ms 50ms;
                     }
+                        #bgOverlayCycling::before { /* removes "lightning" bug */
+                            position: absolute;
+                            left: -1%;
+                            width: 1%; height: 100%;
+                            background-color: #001620;
+                            content: '';
+                        }
 
 /* -- / -- */
 
