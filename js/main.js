@@ -8,7 +8,9 @@
 
     const setLbHeight = () => {
         const headerHeight = document.querySelector('header').offsetHeight;
-        main.style.height = `${(window.innerHeight - headerHeight) / get.fontSize()}rem`;
+        const calculatedHeight = `${(window.innerHeight - headerHeight) / get.fontSize()}rem`;
+
+        main.style.height = calculatedHeight;
     }
 
 

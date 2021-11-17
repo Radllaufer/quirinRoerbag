@@ -1,5 +1,6 @@
 /* -- Main -- */
     main {
+        position: relative;
         width: 100%;
         overflow: hidden;
     }
@@ -51,14 +52,14 @@
 
                 .bg-overlay {
                     position: absolute;
-                        top: 0; left: 0;
-                        z-index: 1;
+                    top: 0; left: 0;
                     width: 100%; height: 100%;
                 }
                     .bg-overlay.dev {
+                        z-index: 1;
                         width: 90.909091%; /* varies on hover */
-                        background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                                          linear-gradient(270deg, #001620, #001620 -1%, transparent 0.8%); /* second colour and -1% remove lightning bug */
+                        background-image: linear-gradient(180deg, #ffe9df19, #ffe9df19),
+                                          linear-gradient(270deg, #202020, #202020 -1%, transparent 0.8%); /* second colour and -1% remove lightning bug */
                                           /* image lbFilter + fading borders */
                         transition: all 900ms 50ms;
                     }
@@ -66,7 +67,7 @@
                             position: absolute;
                             right: -1%;
                             width: 1%; height: 100%;
-                            background-color: #001620;
+                            background-color: #202020;
                             content: '';
                         }
 
@@ -109,21 +110,25 @@
                         background-image: url("../images/cycling-temporary.jpg");
                             background-size: auto 100%;
                             background-position: 40% 100%;
+                        
+                        /* background-image: url("../images/cycling.jpg"); */
+                            /* background-size: 100% auto; */
+                            /* background-position: 100% 80%; */
                     }
 
                     .bg-overlay.cycling {
                         right: 0; left: auto;
                         z-index: 3;
                         width: 90.909091%; /* varies */
-                        background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
-                                          linear-gradient(90deg, #001620, #001620 -1%, transparent 0.8%);
+                        background-image: linear-gradient(180deg, #dff5ff19, #dff5ff19),
+                                          linear-gradient(90deg, #202020, #202020 -1%, transparent 0.8%);
                         transition: all 900ms 50ms;
                     }
                         #bgOverlayCycling::before { /* removes "lightning" bug */
                             position: absolute;
                             left: -1%;
                             width: 1%; height: 100%;
-                            background-color: #001620;
+                            background-color: #202020;
                             content: '';
                         }
 
@@ -195,14 +200,14 @@
                     .bg-overlay.dev {
                         width: 100%;
                         background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                                          linear-gradient(0deg, #001620, transparent 0.8%);
+                                          linear-gradient(0deg, #202020, transparent 0.8%);
                         transition: none;
                     }
 
                     .bg-overlay.cycling {
                         width: 100%;
                         background-image: linear-gradient(180deg, #dff5ff19, #dff5ff19),
-                                          linear-gradient(180deg, #001620, transparent 0.8%);
+                                          linear-gradient(180deg, #202020, transparent 0.8%);
                         transition: none;
                     }
 
@@ -273,7 +278,7 @@
 
         .bg-overlay.dev {
             background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                              linear-gradient(0deg, #001620, transparent 0.8%);
+                              linear-gradient(0deg, #202020, transparent 0.8%);
         }
 
         .cycling .bg-image {
@@ -282,7 +287,7 @@
 
         .bg-overlay.cycling {
             background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
-                              linear-gradient(180deg, #001620, transparent 0.8%);
+                              linear-gradient(180deg, #202020, transparent 0.8%);
         }
 
         #lbFilter, #lbWindow, .bg-overlay.dev, .bg-overlay.cycling {
@@ -298,7 +303,7 @@
 
             .bg-overlay.dev {
                 background-image: linear-gradient(180deg, #404040, #ffe9df19 0.6%),
-                                  linear-gradient(270deg, #001620, transparent 0.8%)
+                                  linear-gradient(270deg, #202020, transparent 0.8%)
                                   !important;
             }
 
@@ -308,7 +313,7 @@
 
             .bg-overlay.cycling {
                 background-image: linear-gradient(180deg, #404040, #dff5ff19 0.6%),
-                                  linear-gradient(90deg, #001620, transparent 0.8%)
+                                  linear-gradient(90deg, #202020, transparent 0.8%)
                                   !important;
             }
 
