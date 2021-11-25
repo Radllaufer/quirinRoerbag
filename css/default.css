@@ -24,33 +24,34 @@
         overflow-x: hidden;
     }
         h1, h2, h3, h4, h5, h6, li, a {
-            font-weight: 300;
-            text-transform: capitalize;
             color: #dfdfdf;
+                font-weight: 300;
+                text-transform: capitalize;
         }
             h1 {
                 text-align: center;
-                font-size: 5rem;
-                font-weight: 500;
+                    font-size: 5rem;
+                    font-weight: 500;
             }
 
             h2 {
                 text-align: center;
-                font-size: 3rem;
-                font-weight: 400;
+                    font-size: 3.5rem;
+                    font-weight: 400;
             }
 
             h3 {
                 text-align: center;
-                font-size: 1.5rem;
+                    font-size: 2rem;
+                    font-weight: 500;
             }
 
             h4 {
-                font-size: 1.3rem;
+                font-size: 1.8rem;
             }
 
             h5 {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             h6 {
@@ -67,7 +68,8 @@
         li {
             margin-bottom: 0.7775rem;
             font-size: 1.3rem;
-            list-style-type: none;
+                list-style-type: none;
+                text-transform: none;
             cursor: pointer;
         }
 
@@ -100,14 +102,8 @@
                 width: 100%; height: 100%;
                 background-image: linear-gradient(180deg, #000, #404040);
                 cursor: pointer;
+                box-shadow: 0 0.1rem 0.2rem 0.1rem #404040;
             }
-                .title-container::before {
-                    position: absolute;
-                    top: 0;
-                    width: 110%; height: 100%;
-                    content: '';
-                    box-shadow: 0 0.2rem 0.2rem #404040;
-                }
                 .title-container h1 {
                     margin-right: -3.75rem; /* accomodate for letter-spacing */ 
                     font-family: "Lucida Console";
@@ -131,79 +127,141 @@
             header .dropdown {
                 position: absolute;
                     top: -20.3rem; right: 0; left: 0;
-                    /* top: 4.5rem; */
+                    top: 4.5rem;
                     z-index: 4;
-                padding-top: 0.5rem;
-                width: 100%; height: 24.5rem;
-                background-image: linear-gradient(180deg, #404040, #202020 0.6%);
-                transition: all 900ms 50ms;
-            }
-                header .dropdown::before {
-                    position: absolute;
-                    top: 0;
-                    width: 110%; height: 100%;
-                    content: '';
-                    box-shadow: 0 0.2rem 0.2rem #202020;
-                }
-
-                .dropdown-upper {
-                    width: 100%; height: 3rem;
-                }
-                    .search-container {
-                        position: relative;
-                        margin: 0 auto;
-                            border-bottom: 0.2rem solid #808080;
-                            width: 30rem; height: 3rem;
-                        cursor: pointer;
-                        transition: all 450ms 50ms;
-                    }
-                        .search-container:hover {
-                            border-bottom: 0.2rem solid #dfdfdf;
-                        }
-
-                .dropdown-main {
                     display: flex;
-                    padding: 2rem 0;
-                    width: 100%; height: 21rem;
-                }
-                    .dropdown-main .left, .dropdown-main .right {
+                    justify-content: space-between;
+                padding: 2rem 10rem;
+                width: 100%; height: 24.5rem;
+                background-color: #202020;
+                box-shadow: 0 0.1rem 0.2rem 0.1rem #202020;
+                transition: top 900ms 50ms;
+            }
+                    .spotlight-slider {
                         display: flex;
-                        justify-content: space-between;
+                        justify-content: center;
                         width: 50%; height: 100%;
+                        transform-style: preserve-3d;
                     }
-                        .dropdown-main .left {
-                            padding-left: 3rem;
-                        }
-
-                        .dropdown-main .right {
-                            padding-right: 3rem;
-                        }
-
                         .spotlight {
+                            position: absolute;
                             border-radius: 1rem;
-                            width: 27.506rem; height: 17rem;
+                            width: 33.1697rem; height: 20.5rem;
                             cursor: pointer;
-                                filter: brightness(75%);
-                                transition: all 450ms 50ms;
-                                box-shadow: 0 0.2rem 0.2rem #404040;
+                                transition: all 300ms 25ms;
+                                overflow: hidden;
                         }
-                            .spotlight:hover {
-                                filter: brightness(100%);
+                            .spotlight img {
+                                    position: absolute;
+                                    z-index: -1;
+                                }
+                            
+                            .spotlight h3 {
+                                position: absolute;
+                                right: 0; left: 0;
+                                margin: 0 auto;
                             }
+                        
+                            #slDev1 {
+                                display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                            }
+                                #slDev1 img {
+                                    width: auto; height: 100%;
+                                }
+                            
+                                #slDev1 h3 {
+                                    top: 64%;
+                                    color: #e5ffdf;
+                                    text-shadow: 0 0.2rem 0.2rem #062000;
+                                }
 
-                            .left .spotlight {
-                                background-image: url('../images/project-references/js-logo.png');
+                            #slDev2 {
+                                display: flex;
+                                    justify-content: flex-end;
+                                    align-items: flex-end;
                                 background-color: #f9e64f;
-                                    background-size: 50% auto;
-                                    background-position: right bottom;
-                                    background-repeat: no-repeat;
                             }
+                                #slDev2 img {
+                                    height: 80%;
+                                }
 
-                            .right .spotlight {
-                                background-image: url('../images/cycling-temporary.jpg');
-                                    background-size: 100% auto;
-                                    background-position: 100% bottom;
+                            #slCycling1 {
+                                display: block; /* set to flex to clip image to borders or centre */
                             }
+                                /* #slCycling1::after {
+                                    position: absolute;
+                                    width: 100%; height: 100%;
+                                    background-image: url('../images/golden-ratio-overlay.png');
+                                        background-size: 100% 100%;
+                                    transform: rotate(180deg) scale(-1, 1);
+                                    content: '';
+                                } */
+                                
+                                #slCycling1 img {
+                                    bottom: -14%; right: -32.8%;
+                                    width: auto; height: 120%;
+                                }
+                            
+                                #slCycling1 h3 {
+                                    top: 20.6%;
+                                    color: #dff5ff;
+                                }
+                                    #slCycling1 h3::before {
+                                        position: absolute;
+                                        text-shadow: 0rem 0.2rem 0.2rem #001620;
+                                        content: 'Jeroboam Austria';
+                                    }
+                                
+                                    #slCycling1 span {
+                                        text-shadow: 1rem 3.2rem 0.2rem #001620;
+                                    }
+
+                                #slCycling2 img {
+                                    bottom: -30%;
+                                    width: 100%;
+                                }
+                                
+                            .spotlight.front {
+                                z-index: 7;
+                                transform: translateZ(10rem) scale(1);
+                                box-shadow: 0 0 0.6rem 0.2rem #202020;
+                            }
+                                .spotlight.front:hover {
+                                    filter: saturate(100%) brightness(110%);
+                                    box-shadow: 0 0 0.6rem 0.2rem #404040;
+                                }
+
+                                .spotlight.left {
+                                    z-index: 6;
+                                    transform: translateX(-20%) 
+                                               scale(.8)
+                                               perspective(100rem) 
+                                               rotateY(10deg);
+                                    filter: opacity(.4) saturate(90%);
+                                }
+
+                                    .spotlight.left:hover, 
+                                    .spotlight.right:hover {
+                                        filter: opacity(.6);
+                                        box-shadow: 0 0 0.6rem 0.2rem #404040;
+                                    }
+
+                                .spotlight.right {
+                                    z-index: 6;
+                                    transform: translateX(20%) 
+                                               scale(.8) 
+                                               perspective(100rem) 
+                                               rotateY(-10deg);
+                                    filter: opacity(.4) saturate(90%);
+                                }
+
+                                .spotlight.back {
+                                    z-index: 5;
+                                    transform: translateX(0) scale(.6);
+                                    filter: opacity(.4) saturate(90%);
+                                }
 
                         .projects-overview {
                             position: relative;
@@ -211,66 +269,88 @@
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: space-between;
+                                align-items: space-between;
                             padding: 1rem;
                                 border-radius: 1rem;
-                                width: 27.506rem; height: 17rem;
+                                width: 28%; height: 100%;
                         }
+                            .projects-overview.dev {
+                                padding-right: 0;
+                            }
+
+                            .projects-overview.cycling {
+                                padding-left: 0;
+                            }
+
+                            .projects-overview.dev h4 {
+                                color: #ffbd9f;
+                            }
+
+                            .projects-overview.cycling h4 {
+                                color: #9fe1ff;
+                                text-align: right;
+                            }
+
                             .projects-list {
                                 position: relative;
                                     display: flex;
                                     flex-direction: column;
-                                height: 100%;
+                                    align-items: flex-start;
                             }
                                 .projects-list li {
                                     display: inline-flex;
                                     height: 1.5625rem;
                                     overflow: hidden;
-                                    transition: color 300ms 50ms;
+                                    transition: color 300ms 25ms;
                                 }
-                                    .left .projects-list li {
-                                        color: #ffe9df;
-                                    }
-                                        .left .projects-list li:hover {
-                                            color: #ffa880;
-                                        }
-
-                                    .right .projects-list {
-                                        align-items: flex-end;
-                                    }
-                                        .right .projects-list li {
-                                            color: #dff5ff;
-                                        }
-                                            .right .projects-list li:hover {
-                                                color: #80d7ff;
-                                            }
-
-                                    .powerbreak {
-                                        margin-bottom: 0.7775rem;
-                                        height: 1.5625rem;
-                                    }
-
-                                    .projects-link {
-                                        position: absolute;
-                                        bottom: 0;
+                                    .projects-list:last-child {
                                         margin-bottom: 0;
                                     }
-                                        .projects-list a {
-                                            font-weight: 500;
-                                            transition: color 300ms 50ms;
-                                        }
-                                            .left .projects-list a {
-                                                color: #ffd3bf;
-                                            }
-                                                .left .projects-list a:hover {
-                                                    color: #ff9260;
-                                                }
 
-                                            .right .projects-list a {
-                                                color: #bfebff;
+                                    .dev .projects-list li {
+                                        color: #bfb4af;
+                                    }
+                                        .dev .projects-list li:hover {
+                                            color: #ffbd9f;
+                                        }
+
+                                    .cycling .projects-list {
+                                        align-items: flex-end;
+                                    }
+                                        .cycling .projects-list li {
+                                            color: #afbabf;
+                                        }
+                                            .cycling .projects-list li:hover {
+                                                color: #9fe1ff;
                                             }
-                                                .right .projects-list a:hover {
-                                                    color: #60cdff;
-                                                }
+                                    
+                                .projects-link {
+                                    font-size: 1.3rem;
+                                }
+                                    .projects-link a {
+                                        font-weight: 500;
+                                        transition: color 300ms 25ms;
+                                    }
+
+                                    .dev .projects-link {
+                                        text-align: left;
+                                    }
+                                        .dev .projects-link a {
+                                            color: #ffd3bf;
+                                        }
+                                            .dev .projects-link a:hover {
+                                                color: #ffa880;
+                                            }
+                                            
+                                    .cycling .projects-link {
+                                        text-align: right;
+                                    }
+                                        .cycling .projects-link a {
+                                            color: #bfebff;
+                                        }
+                                            .cycling .projects-link a:hover {
+                                                color: #80d7ff;
+                                            }
 
 
 /* -- / -- */   

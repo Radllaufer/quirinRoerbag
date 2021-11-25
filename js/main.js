@@ -1,10 +1,11 @@
-/* -- Main -- */
+/* -- Leaderboard -- */
     const lb = document.getElementById('lb');
     const lbWindow = document.getElementById('lbWindow');
     const lbWindowStyles = window.getComputedStyle(lbWindow);
     const lbFilter = document.getElementById('lbFilter');
     const bgOverlayDev = document.getElementById('bgOverlayDev');
     const bgOverlayCycling = document.getElementById('bgOverlayCycling');
+
 
     const setLbHeight = () => {
         const headerHeight = document.querySelector('header').offsetHeight;
@@ -37,11 +38,16 @@
         return valueArray[0];
     }
 
-
     let lbCentreLine = lb.offsetWidth * (setLbWidths() / 100);
 
-    const checkSide = (e) => {
+    const currentWidth = () => {
+        let array = lbWindowStyles.getPropertyValue('width').split('');
+        array.pop();
+        array.pop();
+        return Math.floor( Number(array.join('')) );
+    }
 
+    const checkSide = (e) => {
         if (e.clientX < lbCentreLine) {
             lbCentreLine = lb.offsetWidth * (setLbWidths('left') / 100);
             setLbWidths('left');
@@ -53,13 +59,6 @@
             setLbWidths('right');
             return;
         }
-    }
-
-    const currentWidth = () => {
-        let array = lbWindowStyles.getPropertyValue('width').split('');
-        array.pop();
-        array.pop();
-        return Math.floor( Number(array.join('')) );
     }
 
     const resetLbCentreLine = () => {
@@ -77,8 +76,7 @@
         resetLbCentreLine();
     }
 
-
-    const defineEventListeners = (EL, portrait) => {
+    const defineLbEventListeners = (EL, portrait) => {
         if (EL) {
             lb.addEventListener('mousemove', checkSide);
             lb.addEventListener('mouseleave', callResetLbCentreLine);
@@ -136,20 +134,22 @@
 
         ( () => {
             if (get.orientation() === 'landscape' && get.isMobile() === false) {
-                defineEventListeners(true);
+                defineLbEventListeners(true);
                 return;
             }
 
             if (get.orientation() === 'portrait') {
-                defineEventListeners(false, true);
+                defineLbEventListeners(false, true);
                 return;
             }
 
             if (get.orientation() === 'landscape' && get.isMobile() === true) {
-                defineEventListeners(false);
+                defineLbEventListeners(false);
                 return;
             }
         } )();
+
+        callDefault();
     }
 
     window.onresize = () => {
@@ -159,22 +159,24 @@
 
         ( () => {
             if (get.orientation() === 'landscape' && get.isMobile() === false) {
-                defineEventListeners(true);
+                defineLbEventListeners(true);
                 return;
             }
 
             if (get.orientation() === 'portrait') {
-                defineEventListeners(false, true);
+                defineLbEventListeners(false, true);
                 return;
             }
 
             if (get.orientation() === 'landscape' && get.isMobile() === true) {
-                defineEventListeners(false);
+                defineLbEventListeners(false);
                 return;
             }
         } )();
         
         rTOC('enable');
+
+        callDefault();
     }
     
 /* -- / -- */

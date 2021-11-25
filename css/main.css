@@ -1,4 +1,4 @@
-/* -- Main -- */
+/* -- Leaderboard -- */
     main {
         position: relative;
         width: 100%;
@@ -31,7 +31,6 @@
                         top: 10rem; right: 0; left: 0;
                         z-index: 2;
                     margin: 0 auto;
-                    font-size: 3.5rem;
                 }
                     .lb-title.dev {
                         right: 9.0909091%; /* 10% of the sum of (50%/55%), 55% is based on hover widths */
@@ -111,7 +110,7 @@
                             background-size: auto 100%;
                             background-position: 40% 100%;
                         
-                        /* background-image: url("../images/cycling.jpg"); */
+                        /* background-image: url("../images/großglockner.jpg"); */
                             /* background-size: 100% auto; */
                             /* background-position: 100% 80%; */
                     }
